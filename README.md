@@ -25,16 +25,6 @@ If you have more than one Raspberry Pi, you can use one to serve up the ad-hoc n
 and the other(s) to connect to the network as clients.  To do that, you'll want the <tt>/etc/rc.local</tt>
 file on your client(s) to look like this:
 
-
-## Connecting to your ad-hoc network from Windows 10
-Open a command prompt with Administrator access and enter the following two commands:
-<pre>
-C:\> netsh wlan set profileparameter name=theadhocname ConnectionType=IBSS
-
-C:\> netsh wlan connect name=theadhocname
-</pre>
-
-
 <pre>
 #!/bin/sh -e
 #
@@ -56,6 +46,14 @@ as a wifi network you can join.  From there, you can connect to the Raspberry Pi
 
 <pre>
 % ssh pi@192.168.2.2
+</pre>
+
+## Connecting to your ad-hoc network from Windows 10
+Open a command prompt with Administrator access and enter the following two commands:
+<pre>
+C:\> netsh wlan set profileparameter name=theadhocname ConnectionType=IBSS
+
+C:\> netsh wlan connect name=theadhocname
 </pre>
 
 ## Important note
